@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, Send, Calendar } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const AppointmentSection = () => {
   const [formData, setFormData] = useState({
@@ -11,16 +12,46 @@ const AppointmentSection = () => {
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for form submission
-    toast({
-      title: "Appointment Request Sent!",
-      description: "We'll contact you within 24 hours to confirm your appointment.",
-    });
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      // EmailJS configuration - you'll need to set up your template ID and public key
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        to_name: 'MindWell Psychology',
+      };
+
+      await emailjs.send(
+        'service_yizcgfx', // Your service ID
+        'YOUR_TEMPLATE_ID', // You need to create a template in EmailJS and replace this
+        templateParams,
+        'YOUR_PUBLIC_KEY' // You need to get your public key from EmailJS and replace this
+      );
+
+      toast({
+        title: "Appointment Request Sent!",
+        description: "We'll contact you within 24 hours to confirm your appointment.",
+      });
+      
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send appointment request. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -71,6 +102,7 @@ const AppointmentSection = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="Your full name"
+                    disabled={isSubmitting}
                   />
                 </div>
                 
@@ -87,6 +119,7 @@ const AppointmentSection = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="(555) 123-4567"
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -104,6 +137,7 @@ const AppointmentSection = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   placeholder="your.email@example.com"
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -119,17 +153,19 @@ const AppointmentSection = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
                   placeholder="Tell us about your needs or preferences for scheduling..."
+                  disabled={isSubmitting}
                 ></textarea>
               </div>
               
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 type="submit"
-                className="w-full bg-primary text-primary-foreground px-6 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-primary-foreground px-6 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send size={20} />
-                Send Appointment Request
+                {isSubmitting ? 'Sending...' : 'Send Appointment Request'}
               </motion.button>
             </form>
           </motion.div>
