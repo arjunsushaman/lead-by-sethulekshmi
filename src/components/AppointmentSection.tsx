@@ -30,10 +30,10 @@ const AppointmentSection = () => {
       };
 
       await emailjs.send(
-        'service_yizcgfx', // Your service ID
-        'YOUR_TEMPLATE_ID', // You need to create a template in EmailJS and replace this
+        'service_yylng55', 
+        'template_9ko2upv', 
         templateParams,
-        'YOUR_PUBLIC_KEY' // You need to get your public key from EmailJS and replace this
+        'G7laWd0KdD90Wz9wT' 
       );
 
       toast({
