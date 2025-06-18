@@ -1,13 +1,12 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Award, Heart, Users } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Award, Heart, Users } from "lucide-react";
 
 const AboutSection = () => {
   const qualifications = [
     { icon: Award, text: "Licensed Clinical Psychologist" },
-    { icon: Heart, text: "10+ Years Experience" },
-    { icon: Users, text: "500+ Clients Helped" }
+    { icon: Heart, text: "4+ Years Experience" },
+    { icon: Users, text: "200+ Clients Helped" },
   ];
 
   return (
@@ -21,7 +20,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            About Dr. Sarah Johnson
+            About Sethulekshmi S M
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Dedicated to helping individuals and couples achieve emotional wellness and personal growth
@@ -37,8 +36,8 @@ const AboutSection = () => {
           >
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=600&fit=crop"
-                alt="Dr. Sarah Johnson"
+                src="/sethulekshmi.webp"
+                alt="SETHULEKSHMI S.M"
                 className="rounded-2xl shadow-lg w-full max-w-md mx-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-2xl"></div>
@@ -54,37 +53,47 @@ const AboutSection = () => {
           >
             <div className="grid grid-cols-1 gap-4">
               {qualifications.map((qual, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg">
+                <div
+                  key={index}
+                  className="flex items-center gap-3 p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg"
+                >
                   <qual.icon className="text-primary" size={24} />
-                  <span className="font-medium text-foreground">{qual.text}</span>
+                  <span className="font-medium text-foreground">
+                    {qual.text}
+                  </span>
                 </div>
               ))}
             </div>
 
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Dr. Sarah Johnson brings over a decade of experience in clinical psychology, 
-                specializing in anxiety disorders, depression, and relationship counseling. 
-                She holds a Ph.D. in Clinical Psychology from Stanford University.
+                Sethulekshmi S M is a professionally trained counselor committed
+                to supporting individuals across all stages of life — including
+                children, adolescents, adults, and couples — as they navigate
+                emotional, behavioral, and personal challenges.
               </p>
-              
+
               <p>
-                Her therapeutic approach combines evidence-based practices with a warm, 
-                empathetic style that helps clients feel safe and understood. Dr. Johnson 
-                believes in the power of the therapeutic relationship to foster healing and growth.
+                Holding an M.Sc. in Psychology and a Postgraduate Diploma in
+                School Counseling, she brings academic expertise with real-world
+                experience. Her client-centered approach is rooted in empathy,
+                patience, and a commitment to creating a safe, supportive space.
               </p>
-              
+
               <p>
-                She is passionate about helping individuals overcome challenges, develop 
-                coping strategies, and build resilience for a more fulfilling life.
+                She empowers individuals with practical tools and emotional
+                insight, guiding them toward clarity, healing, and personal
+                growth at their own pace.
               </p>
             </div>
 
             <div className="bg-gradient-to-r from-primary/5 to-green-50 p-6 rounded-lg">
-              <h3 className="font-semibold text-foreground mb-2">Therapeutic Approach</h3>
+              <h3 className="font-semibold text-foreground mb-2">
+                Specialized in:{" "}
+              </h3>
               <p className="text-muted-foreground">
-                Integrative approach using Cognitive Behavioral Therapy (CBT), 
-                Mindfulness-Based interventions, and Person-Centered therapy techniques.
+                Child &amp; Adolescent Mental Health, Family and Relationship
+                Counseling
               </p>
             </div>
           </motion.div>

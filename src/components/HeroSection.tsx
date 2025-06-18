@@ -22,8 +22,9 @@ const HeroSection = () => {
             className="text-center lg:text-left"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Your Mental Health
-              <span className="text-primary block">Matters</span>
+              Unlock your Potential, 
+                <span className="text-primary block">Unleash your</span>
+                <span className="text-primary block">Strength</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">

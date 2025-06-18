@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
@@ -38,13 +37,20 @@ const Header = () => {
     }`}>
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo and Title */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl md:text-3xl font-bold text-primary"
+            className="flex items-center gap-3"
           >
-            MindWell Psychology
+            <img
+              src="/logo.png"
+              alt="Lead Logo"
+              className="h-20 w-20 object-contain rounded-full aspect-square"
+            />
+            <span className="text-2xl md:text-3xl font-bold text-primary hidden sm:inline">
+              Lead by Sethulekshmi
+            </span>
           </motion.div>
 
           {/* Desktop Navigation */}

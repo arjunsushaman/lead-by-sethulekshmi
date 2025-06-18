@@ -6,30 +6,33 @@ import { Star, Quote } from 'lucide-react';
 const ReviewsSection = () => {
   const reviews = [
     {
-      name: "Emily Rodriguez",
+      name: "Mahesh J S",
       rating: 5,
-      text: "Dr. Johnson helped me through one of the most difficult periods of my life. Her compassionate approach and practical strategies made all the difference.",
+      text: "Child counseling sessions with Sethulekshmi have truly helped my son express his emotions better. The playful, safe approach made a big difference.",
       date: "2 weeks ago"
     },
     {
-      name: "Michael Chen",
+      name: "Bhagyalekshmi",
       rating: 5,
-      text: "The couples therapy sessions saved our marriage. Dr. Johnson created a safe space where we could communicate openly and work through our issues.",
+      text: "The adolescent therapy sessions helped my daughter manage her exam stress and feel more confident in school. Highly supportive environment!",
       date: "1 month ago"
     },
     {
-      name: "Sarah Williams",
+      name: "Anagha Jewel",
       rating: 5,
-      text: "I was skeptical about therapy at first, but Dr. Johnson's warm and non-judgmental approach made me feel comfortable from day one. Highly recommended!",
+      text: "I was struggling with anxiety and overthinking. The adult counseling sessions with Sethulekshmi S M gave me clarity and practical tools to manage my emotions better.",
       date: "3 weeks ago"
     },
     {
-      name: "David Thompson",
+      name: "Vindhya Padmakumar",
       rating: 5,
-      text: "The anxiety management techniques I learned here have been life-changing. I finally feel like I have control over my anxiety instead of it controlling me.",
-      date: "1 week ago"
+      text: "Our Adolescent Counseling experience was transformative. We learned to communicate openly and reconnect on a deeper level. Thank you, Sethulekshmi!",
+      date: "2 months ago"
     }
   ];
+  
+  
+  
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
@@ -113,7 +116,7 @@ const ReviewsSection = () => {
               <span className="text-2xl font-bold text-foreground">4.9/5</span>
             </div>
             <p className="text-muted-foreground">
-              Based on 150+ reviews from our valued clients
+              Based on 100+ reviews from our valued clients
             </p>
           </div>
         </motion.div>

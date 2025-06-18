@@ -1,48 +1,53 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Heart, Users, Shield, Zap, MessageCircle } from 'lucide-react';
 
-const ServicesSection = () => {
-  const services = [
-    {
-      icon: Brain,
-      title: "Individual Therapy",
-      description: "One-on-one sessions for anxiety, depression, trauma, and personal growth",
-      features: ["Anxiety & Depression", "Trauma Recovery", "Life Transitions", "Self-Esteem"]
-    },
-    {
-      icon: Heart,
-      title: "Couples Therapy",
-      description: "Strengthen your relationship with evidence-based couples counseling",
-      features: ["Communication", "Conflict Resolution", "Intimacy", "Trust Building"]
-    },
-    {
-      icon: Users,
-      title: "Family Therapy",
-      description: "Improve family dynamics and resolve conflicts in a supportive environment",
-      features: ["Parent-Child Issues", "Sibling Conflicts", "Blended Families", "Communication"]
-    },
-    {
-      icon: Shield,
-      title: "Anxiety Treatment",
-      description: "Specialized treatment for anxiety disorders and panic attacks",
-      features: ["Panic Disorder", "Social Anxiety", "Generalized Anxiety", "Phobias"]
-    },
-    {
-      icon: Zap,
-      title: "Stress Management",
-      description: "Learn effective coping strategies for work and life stress",
-      features: ["Work Stress", "Burnout", "Time Management", "Relaxation Techniques"]
-    },
-    {
-      icon: MessageCircle,
-      title: "Online Therapy",
-      description: "Convenient and secure video sessions from the comfort of your home",
-      features: ["Video Sessions", "Flexible Scheduling", "Secure Platform", "Same Quality Care"]
-    }
-  ];
+export const services = [
+  {
+    icon: Users,
+    title: "Child Counseling",
+    description: "Support for children facing emotional or behavioral challenges, using engaging and age-appropriate methods.",
+    features: ["Emotional & Behavioral Support", "Safe, Child-Friendly Environment", "Includes Parent Sessions"]
+  },
+  {
+    icon: Users,
+    title: "Adolescent Counseling",
+    description: "Therapy designed for teens dealing with stress, emotions, relationships, and identity, in a respectful and relatable way.",
+    features: ["Exam & Academic Stress", "Friendship & Social Issues", "Confidence & Emotional Balance", "Optional Parent Guidance"]
+  },
+  {
+    icon: Brain,
+    title: "Adult Counseling",
+    description: "Private, one-on-one sessions to manage anxiety, low mood, overthinking, and life transitions.",
+    features: ["Anxiety & Overthinking", "Depression & Low Mood", "Major Life Changes", "Focus on Clarity & Emotional Wellness"]
+  },
+  {
+    icon: Heart,
+    title: "Couples Counseling",
+    description: "Strengthen your bond with partner-focused sessions that support communication and healing.",
+    features: ["Better Understanding", "Improved Communication", "Relationship Healing", "Pre-Marital & Marital Support"]
+  },
+  {
+    icon: Shield,
+    title: "Pregnancy Support",
+    description: "Gentle emotional support and tools to manage stress and mindfulness during pregnancy.",
+    features: ["Prenatal Counseling", "Stress Management", "Mindfulness Practices", "Emotional Preparation for Parenthood"]
+  },
+  {
+    icon: Shield,
+    title: "Postpartum Care",
+    description: "Helping new mothers navigate emotional changes after childbirth with care and understanding.",
+    features: ["Anxiety & Depression Support", "Emotional Adjustment", "Compassionate Counseling", "Post-Birth Transition"]
+  },
+  {
+    icon: Shield,
+    title: "Return-to-Work Assistance",
+    description: "Support for parents transitioning back to work after parental leave, focusing on emotional well-being.",
+    features: ["Confidence Building", "Emotional Readiness", "Work-Life Balance", "Smooth Return to Workplace"]
+  }
+];
 
+const ServicesSection = () => {
   return (
     <section id="services" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

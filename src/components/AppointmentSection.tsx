@@ -1,9 +1,10 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, Send, Calendar } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
+import AppointmentForm from './AppointmentForm';
+import { services as serviceOptions } from './ServicesSection';
 
 const AppointmentSection = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ const AppointmentSection = () => {
         from_email: formData.email,
         phone: formData.phone,
         message: formData.message,
-        to_name: 'MindWell Psychology',
+        to_name: 'Lead by Sethulekshmi',
       };
 
       await emailjs.send(
@@ -72,102 +73,23 @@ const AppointmentSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Book Your Appointment
+            Schedule Your Consultation
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to take the first step? Schedule your consultation today or call us directly
+            Ready to take the first step? Book your consultation now or give us a call.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch min-h-[70vh]">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="flex flex-col h-full justify-start"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="Your full name"
-                    disabled={isSubmitting}
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="(555) 123-4567"
-                    disabled={isSubmitting}
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  placeholder="your.email@example.com"
-                  disabled={isSubmitting}
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message (Optional)
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                  placeholder="Tell us about your needs or preferences for scheduling..."
-                  disabled={isSubmitting}
-                ></textarea>
-              </div>
-              
-              <motion.button
-                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-primary text-primary-foreground px-6 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <Send size={20} />
-                {isSubmitting ? 'Sending...' : 'Send Appointment Request'}
-              </motion.button>
-            </form>
+            <AppointmentForm services={serviceOptions} />
           </motion.div>
 
           {/* Contact Information */}
@@ -176,63 +98,74 @@ const AppointmentSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="flex flex-col gap-4 h-full justify-center"
           >
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl">
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl flex-shrink-0">
               <h3 className="text-2xl font-semibold text-foreground mb-6">
                 Prefer to Call?
               </h3>
-              
-              <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="tel:+1-555-123-4567"
-                  className="flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group"
+                  className="flex-1 flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group justify-center"
                 >
                   <Phone className="text-primary group-hover:text-primary-foreground" size={24} />
                   <div>
                     <p className="font-semibold">Call Now</p>
-                    <p className="text-sm opacity-80">(555) 123-4567</p>
+                    <p className="text-sm opacity-80">+91 8075818137</p>
                   </div>
                 </a>
-                
                 <a
-                  href="mailto:info@mindwellpsychology.com"
-                  className="flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group"
+                  href="mailto:leadbysethulekshmi@gmail.com"
+                  className="flex-1 flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group justify-center"
                 >
                   <Mail className="text-primary group-hover:text-primary-foreground" size={24} />
                   <div>
                     <p className="font-semibold">Email Us</p>
-                    <p className="text-sm opacity-80">info@mindwellpsychology.com</p>
+                    <p className="text-sm opacity-80">leadbysethulekshmi@gmail.com</p>
                   </div>
                 </a>
               </div>
             </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg">
+            {/* Office Hours & Session Details Combined Card */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg flex-shrink-0">
               <div className="flex items-center gap-3 mb-4">
                 <Calendar className="text-primary" size={24} />
                 <h3 className="text-xl font-semibold text-foreground">Office Hours</h3>
               </div>
-              
-              <div className="space-y-2 text-muted-foreground">
+              <div className="space-y-2 text-muted-foreground mb-6">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
                   <span>9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM - 4:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
                   <span>Closed</span>
                 </div>
               </div>
-              
-              <div className="mt-4 p-3 bg-green-50 rounded-lg">
-                <p className="text-sm text-green-800">
-                  ✨ Same-day emergency appointments available
-                </p>
+              <hr className="my-6 border-gray-200" />
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <span role="img" aria-label="info">ℹ️</span> Session Details
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-muted-foreground text-base">
+                  <li className="flex items-center gap-2">
+                    <span role="img" aria-label="clock">⏰</span>
+                    <span>Session Time: <span className="font-medium text-foreground">45–60 mins</span></span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span role="img" aria-label="platform">💻</span>
+                    <span>Platform: <span className="font-medium text-foreground">Google Meet</span></span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span role="img" aria-label="languages">🗣️</span>
+                    <span>Languages: <span className="font-medium text-foreground">English & Malayalam</span></span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span role="img" aria-label="confidential">🔒</span>
+                    <span>Confidential & Safe</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </motion.div>

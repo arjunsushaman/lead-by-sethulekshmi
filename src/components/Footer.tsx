@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
@@ -22,7 +21,10 @@ const Footer = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-4">MindWell Psychology</h3>
+            <div className="flex flex-col items-center md:items-start mb-4">
+              <img src="/logo.png" alt="Lead Logo" className="h-20 w-20 object-contain mb-2" />
+              <h3 className="text-2xl font-bold">Lead by Sethulekshmi</h3>
+            </div>
             <p className="text-gray-300 mb-6">
               Professional mental health services in a warm, supportive environment. 
               Your journey to wellness starts here.
@@ -33,9 +35,6 @@ const Footer = () => {
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
               </a>
             </div>
           </motion.div>
@@ -77,12 +76,13 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Individual Therapy</li>
-              <li>Couples Therapy</li>
-              <li>Family Therapy</li>
-              <li>Anxiety Treatment</li>
-              <li>Stress Management</li>
-              <li>Online Therapy</li>
+              <li>Child Counseling</li>
+              <li>Adolescent Counseling</li>
+              <li>Adult Counseling</li>
+              <li>Couples Counseling</li>
+              <li>Pregnancy Support</li>
+              <li>Postpartum Care</li>
+              <li>Return-to-Work Assistance</li>
             </ul>
           </motion.div>
 
@@ -100,21 +100,22 @@ const Footer = () => {
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <Phone size={18} />
-                (555) 123-4567
+                +91 8075818137
               </a>
               <a
-                href="mailto:info@mindwellpsychology.com"
+                href="mailto:leadbysethulekshmi@gmail.com"
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <Mail size={18} />
-                info@mindwellpsychology.com
+                leadbysethulekshmi@gmail.com
               </a>
               <div className="flex items-start gap-3 text-gray-300">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
                 <div>
-                  123 Wellness Boulevard<br />
-                  Suite 456<br />
-                  Downtown, CA 90210
+                  Eanikkara<br />
+                  Opposite SBI, Karakulam,<br />
+                  Thiruvananthapuram,
+                  695564
                 </div>
               </div>
             </div>
@@ -129,7 +130,7 @@ const Footer = () => {
           className="border-t border-gray-800 mt-12 pt-8 text-center"
         >
           <p className="text-gray-400">
-            © 2024 MindWell Psychology. All rights reserved. | Privacy Policy | Terms of Service
+            © 2024 Lead by Sethulekshmi. All rights reserved. | Privacy Policy | Terms of Service
           </p>
         </motion.div>
       </div>
