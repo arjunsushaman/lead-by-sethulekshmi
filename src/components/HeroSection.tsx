@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Calendar } from 'lucide-react';
+import { Phone, Calendar, Instagram } from 'lucide-react';
 
 const HeroSection = () => {
   const scrollToAppointment = () => {
@@ -31,12 +31,12 @@ const HeroSection = () => {
               Take the first step towards better mental health and emotional wellbeing.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start flex-wrap max-w-xl lg:max-w-none">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToAppointment}
-                className="bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2 justify-center"
+                className="bg-primary text-primary-foreground px-5 py-3 rounded-full text-base font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2 justify-center whitespace-nowrap flex-1 min-w-[160px] sm:flex-initial"
               >
                 <Calendar size={20} />
                 Book an Appointment
@@ -46,10 +46,22 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="tel:+91 8075818137"
-                className="border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2 justify-center"
+                className="border-2 border-primary text-primary px-5 py-3 rounded-full text-base font-semibold hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2 justify-center whitespace-nowrap flex-1 min-w-[160px] sm:flex-initial"
               >
                 <Phone size={20} />
                 Call Now
+              </motion.a>
+              
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://www.instagram.com/lead_by_sethulekshmi?igsh=MWxqN2d2ZTN4dWQ4YQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-pink-500 text-pink-500 px-5 py-3 rounded-full text-base font-semibold hover:bg-pink-500 hover:text-white transition-colors flex items-center gap-2 justify-center whitespace-nowrap flex-1 min-w-[160px] sm:flex-initial"
+              >
+                <Instagram size={20} />
+                Follow Us
               </motion.a>
             </div>
           </motion.div>
