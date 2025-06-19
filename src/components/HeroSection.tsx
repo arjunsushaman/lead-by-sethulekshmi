@@ -46,7 +46,7 @@ const HeroSection = () => {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="tel:+1-555-123-4567"
+                href="tel:+91 8075818137"
                 className="border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2 justify-center"
               >
                 <Phone size={20} />

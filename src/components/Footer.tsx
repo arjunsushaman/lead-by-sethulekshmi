@@ -96,7 +96,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-4">
               <a
-                href="tel:+1-555-123-4567"
+                href="tel:+91 8075818137"
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <Phone size={18} />

@@ -106,7 +106,7 @@ const AppointmentSection = () => {
               </h3>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="tel:+1-555-123-4567"
+                  href="tel:+91 8075818137"
                   className="flex-1 flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group justify-center"
                 >
                   <Phone className="text-primary group-hover:text-primary-foreground" size={24} />

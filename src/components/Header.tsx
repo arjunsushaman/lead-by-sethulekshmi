@@ -65,7 +65,7 @@ const Header = () => {
               </button>
             ))}
             <a
-              href="tel:+1-555-123-4567"
+              href="tel:+91 8075818137"
               className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full hover:bg-primary/90 transition-colors"
             >
               <Phone size={16} />
@@ -99,7 +99,7 @@ const Header = () => {
               </button>
             ))}
             <a
-              href="tel:+1-555-123-4567"
+              href="tel:+91 8075818137"
               className="flex items-center gap-2 mx-4 mt-2 bg-primary text-primary-foreground px-4 py-2 rounded-full hover:bg-primary/90 transition-colors justify-center"
             >
               <Phone size={16} />
