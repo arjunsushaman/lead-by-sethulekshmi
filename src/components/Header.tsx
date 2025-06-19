@@ -46,9 +46,9 @@ const Header = () => {
             <img
               src="/logo.png"
               alt="Lead Logo"
-              className="h-20 w-20 object-contain rounded-full aspect-square"
+              className="h-14 w-14 object-contain rounded-full aspect-square sm:h-20 sm:w-20"
             />
-            <span className="text-2xl md:text-3xl font-bold text-primary hidden sm:inline">
+            <span className="text-2xl md:text-3xl font-bold text-primary hidden lg:inline">
               Lead by Sethulekshmi
             </span>
           </motion.div>
