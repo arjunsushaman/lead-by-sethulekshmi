@@ -57,8 +57,8 @@ const LocationSection = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">Address</h3>
                   <p className="text-muted-foreground">
-                    Eanikkara,<br />
-                    Opposite SBI, Karakulam, <br />
+                    Nila Building<br />
+                    Eanikkara, Karakulam,<br />
                     Thiruvananthapuram,
                     695564
                   </p>

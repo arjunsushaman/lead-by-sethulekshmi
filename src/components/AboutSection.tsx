@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, Heart, Users } from "lucide-react";
+import { BookHeart, Heart, Users } from "lucide-react";
 
 const AboutSection = () => {
   const qualifications = [
-    { icon: Award, text: "Licensed Clinical Psychologist" },
+    { icon: BookHeart, text: "Psychologist & Mental Health Practitioner" },
     { icon: Heart, text: "4+ Years Experience" },
     { icon: Users, text: "200+ Clients Helped" },
   ];

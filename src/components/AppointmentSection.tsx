@@ -97,7 +97,7 @@ const AppointmentSection = () => {
                   </li>
                   <li className="flex items-center gap-2">
                     <span role="img" aria-label="platform">💻</span>
-                    <span>Platform: <span className="font-medium text-foreground">Google Meet</span></span>
+                    <span>Platform: <span className="font-medium text-foreground">Google Meet | Zoom</span></span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span role="img" aria-label="languages">🗣️</span>

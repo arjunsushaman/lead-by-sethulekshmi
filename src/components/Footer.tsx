@@ -113,8 +113,8 @@ const Footer = () => {
               <div className="flex items-start gap-3 text-gray-300">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
                 <div>
-                  Eanikkara<br />
-                  Opposite SBI, Karakulam,<br />
+                  Nila Building<br />
+                  Eanikkara, Karakulam,<br />
                   Thiruvananthapuram,
                   695564
                 </div>
