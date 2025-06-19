@@ -22,8 +22,9 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex flex-col items-center md:items-start mb-4">
-              <img src="/logo.png" alt="Lead Logo" className="h-20 w-20 object-contain mb-2" />
+              <img src="/logo.png" alt="Lead by Sethulekshmi - leadbysethulekshmi logo" className="h-20 w-20 object-contain mb-2" />
               <h3 className="text-2xl font-bold">Lead by Sethulekshmi</h3>
+              <p className="text-gray-400">(also known as leadbysethulekshmi)</p>
             </div>
             <p className="text-gray-300 mb-6">
               Professional mental health services in a warm, supportive environment. 
