@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Input } from './ui/input';
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from './ui/select';
 import { Calendar } from './ui/calendar';
@@ -37,6 +37,22 @@ const TIME_SLOTS = [
   '5:00 PM – 6:00 PM',
 ];
 
+// Helper to get the start time of a slot as a Date object (today)
+function getSlotStartDate(slot, baseDate) {
+  // slot: '9:00 AM – 10:00 AM'
+  const [start] = slot.split('–')[0].split('-');
+  const timeStr = start.trim();
+  const [time, meridian] = timeStr.split(' ');
+  const [hoursRaw, minutesRaw] = time.split(':').map(Number);
+  let hours = hoursRaw;
+  const minutes = minutesRaw;
+  if (meridian === 'PM' && hours !== 12) hours += 12;
+  if (meridian === 'AM' && hours === 12) hours = 0;
+  const date = new Date(baseDate);
+  date.setHours(hours, minutes, 0, 0);
+  return date;
+}
+
 const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
   const [formData, setFormData] = useState({
     clientName: '',
@@ -52,6 +68,21 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const [calendarOpen, setCalendarOpen] = useState(false);
+
+  // Compute which slots are available for the selected date
+  const availableTimeSlots = useMemo(() => {
+    if (!formData.date) return TIME_SLOTS.map(slot => ({ slot, disabled: false }));
+    const today = new Date();
+    const isToday =
+      formData.date.getDate() === today.getDate() &&
+      formData.date.getMonth() === today.getMonth() &&
+      formData.date.getFullYear() === today.getFullYear();
+    if (!isToday) return TIME_SLOTS.map(slot => ({ slot, disabled: false }));
+    return TIME_SLOTS.map(slot => {
+      const slotStart = getSlotStartDate(slot, today);
+      return { slot, disabled: slotStart <= today };
+    });
+  }, [formData.date]);
 
   const validate = () => {
     const newErrors: AppointmentFormErrors = {};
@@ -98,13 +129,13 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
         date: formData.date ? formData.date.toLocaleDateString() : '',
         time: formData.time,
         service: formData.service,
-        to_name: 'Lead by Sethulekshmi',
+        to_name: 'Sethulekshmi',
       };
       await emailjs.send(
-        'service_yylng55',
-        'template_9ko2upv',
+        'service_w0r0su9',
+        'template_ekaw6fo',
         templateParams,
-        'G7laWd0KdD90Wz9wT'
+        'db9dvFkpMZOqBg8u-'
       );
       toast({
         title: 'Appointment Request Sent!',
@@ -133,7 +164,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="clientName" className="block text-sm font-medium text-foreground mb-2">
-                Client Name *
+                Your Name *
               </label>
               <Input
                 id="clientName"
@@ -141,7 +172,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
                 required
                 value={formData.clientName}
                 onChange={handleChange}
-                placeholder="Jithin"
+                placeholder="Enter your Name"
                 disabled={isSubmitting}
               />
               {errors.clientName && <p className="text-red-500 text-xs mt-1">{errors.clientName}</p>}
@@ -168,7 +199,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
                   required
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="9876543210"
+                  placeholder="Phone"
                   disabled={isSubmitting}
                   className="flex-1"
                   maxLength={10}
@@ -189,7 +220,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
               required
               value={formData.email}
               onChange={handleChange}
-              placeholder="mag@example.com"
+              placeholder="Enter your email"
               disabled={isSubmitting}
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -201,9 +232,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
                 <div className="relative flex items-center">
                   <Input
                     type="text"
-                    value={formData.date ? formData.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : formData.dateInput || ''}
-                    onChange={handleDateInputChange}
-                    placeholder="25 Jun 2025"
+                    value={formData.date ? formData.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : ''}
+                    readOnly
+                    placeholder="Select Date"
                     disabled={isSubmitting}
                     className="pr-10"
                   />
@@ -244,8 +275,8 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ services }) => {
                   <SelectValue placeholder="Select time slot" />
                 </SelectTrigger>
                 <SelectContent>
-                  {TIME_SLOTS.map(slot => (
-                    <SelectItem key={slot} value={slot}>{slot}</SelectItem>
+                  {availableTimeSlots.map(({ slot, disabled }) => (
+                    <SelectItem key={slot} value={slot} disabled={disabled}>{slot}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>

@@ -7,60 +7,6 @@ import AppointmentForm from './AppointmentForm';
 import { services as serviceOptions } from './ServicesSection';
 
 const AppointmentSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // EmailJS configuration - you'll need to set up your template ID and public key
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
-        to_name: 'Lead by Sethulekshmi',
-      };
-
-      await emailjs.send(
-        'service_yylng55', 
-        'template_9ko2upv', 
-        templateParams,
-        'G7laWd0KdD90Wz9wT' 
-      );
-
-      toast({
-        title: "Appointment Request Sent!",
-        description: "We'll contact you within 24 hours to confirm your appointment.",
-      });
-      
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (error) {
-      console.error('EmailJS error:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send appointment request. Please try again or call us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
 
   return (
     <section id="appointment" className="py-20 bg-white">
