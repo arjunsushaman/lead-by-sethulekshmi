@@ -107,7 +107,7 @@ const AppointmentSection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="tel:+91 8075818137"
-                  className="flex-1 flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group justify-center"
+                  className="flex-1 flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group justify-start"
                 >
                   <Phone className="text-primary group-hover:text-primary-foreground" size={24} />
                   <div>
@@ -117,7 +117,7 @@ const AppointmentSection = () => {
                 </a>
                 <a
                   href="mailto:leadbysethulekshmi@gmail.com"
-                  className="flex-1 flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group justify-center"
+                  className="flex-1 flex items-center gap-4 p-4 bg-white rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors group justify-start"
                 >
                   <Mail className="text-primary group-hover:text-primary-foreground" size={24} />
                   <div>
