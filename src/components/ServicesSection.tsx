@@ -5,25 +5,25 @@ import { Brain, Heart, Users, Shield, Zap, MessageCircle } from 'lucide-react';
 export const services = [
   {
     icon: Users,
-    title: "Child Counseling",
+    title: "Child Counselling",
     description: "Support for children facing emotional or behavioral challenges, using engaging and age-appropriate methods.",
     features: ["Emotional & Behavioral Support", "Safe, Child-Friendly Environment", "Includes Parent Sessions"]
   },
   {
     icon: Users,
-    title: "Adolescent Counseling",
+    title: "Adolescent Counselling",
     description: "Therapy designed for teens dealing with stress, emotions, relationships, and identity, in a respectful and relatable way.",
     features: ["Exam & Academic Stress", "Friendship & Social Issues", "Confidence & Emotional Balance", "Optional Parent Guidance"]
   },
   {
     icon: Brain,
-    title: "Adult Counseling",
+    title: "Adult Counselling",
     description: "Private, one-on-one sessions to manage anxiety, low mood, overthinking, and life transitions.",
     features: ["Anxiety & Overthinking", "Depression & Low Mood", "Major Life Changes", "Focus on Clarity & Emotional Wellness"]
   },
   {
     icon: Heart,
-    title: "Couples Counseling",
+    title: "Couples Counselling",
     description: "Strengthen your bond with partner-focused sessions that support communication and healing.",
     features: ["Better Understanding", "Improved Communication", "Relationship Healing", "Pre-Marital & Marital Support"]
   },
@@ -31,13 +31,13 @@ export const services = [
     icon: Shield,
     title: "Pregnancy Support",
     description: "Gentle emotional support and tools to manage stress and mindfulness during pregnancy.",
-    features: ["Prenatal Counseling", "Stress Management", "Mindfulness Practices", "Emotional Preparation for Parenthood"]
+    features: ["Prenatal Counselling", "Stress Management", "Mindfulness Practices", "Emotional Preparation for Parenthood"]
   },
   {
     icon: Shield,
     title: "Postpartum Care",
     description: "Helping new mothers navigate emotional changes after childbirth with care and understanding.",
-    features: ["Anxiety & Depression Support", "Emotional Adjustment", "Compassionate Counseling", "Post-Birth Transition"]
+    features: ["Anxiety & Depression Support", "Emotional Adjustment", "Compassionate Counselling", "Post-Birth Transition"]
   },
   {
     icon: Shield,

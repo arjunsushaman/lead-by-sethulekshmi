@@ -75,7 +75,7 @@ const AboutSection = () => {
 
               <p>
                 Holding an M.Sc. in Psychology and a Postgraduate Diploma in
-                School Counseling, she brings academic expertise with real-world
+                School Counselling, she brings academic expertise with real-world
                 experience. Her client-centered approach is rooted in empathy,
                 patience, and a commitment to creating a safe, supportive space.
               </p>
@@ -93,7 +93,7 @@ const AboutSection = () => {
               </h3>
               <p className="text-muted-foreground">
                 Child &amp; Adolescent Mental Health, Family and Relationship
-                Counseling
+                Counselling
               </p>
             </div>
           </motion.div>

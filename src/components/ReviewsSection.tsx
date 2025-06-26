@@ -8,7 +8,7 @@ const ReviewsSection = () => {
     {
       name: "Mahesh J S",
       rating: 5,
-      text: "Child counseling sessions with Sethulekshmi have truly helped my son express his emotions better. The playful, safe approach made a big difference.",
+      text: "Child counselling sessions with Sethulekshmi have truly helped my son express his emotions better. The playful, safe approach made a big difference.",
       date: "2 weeks ago"
     },
     {
@@ -20,13 +20,13 @@ const ReviewsSection = () => {
     {
       name: "Anagha Jewel",
       rating: 5,
-      text: "I was struggling with anxiety and overthinking. The adult counseling sessions with Sethulekshmi S M gave me clarity and practical tools to manage my emotions better.",
+      text: "I was struggling with anxiety and overthinking. The adult counselling sessions with Sethulekshmi S M gave me clarity and practical tools to manage my emotions better.",
       date: "3 weeks ago"
     },
     {
       name: "Vindhya Padmakumar",
       rating: 5,
-      text: "Our Adolescent Counseling experience was transformative. We learned to communicate openly and reconnect on a deeper level. Thank you, Sethulekshmi!",
+      text: "Our Adolescent Counselling experience was transformative. We learned to communicate openly and reconnect on a deeper level. Thank you, Sethulekshmi!",
       date: "2 months ago"
     }
   ];

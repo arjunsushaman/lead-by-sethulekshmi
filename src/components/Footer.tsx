@@ -77,10 +77,10 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Child Counseling</li>
-              <li>Adolescent Counseling</li>
-              <li>Adult Counseling</li>
-              <li>Couples Counseling</li>
+              <li>Child Counselling</li>
+              <li>Adolescent Counselling</li>
+              <li>Adult Counselling</li>
+              <li>Couples Counselling</li>
               <li>Pregnancy Support</li>
               <li>Postpartum Care</li>
               <li>Return-to-Work Assistance</li>
