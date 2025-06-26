@@ -67,7 +67,7 @@ const AboutSection = () => {
 
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Sethulekshmi S M is a professionally trained counselor committed
+                Sethulekshmi S M is a professionally trained counsellor committed
                 to supporting individuals across all stages of life — including
                 children, adolescents, adults, and couples — as they navigate
                 emotional, behavioral, and personal challenges.
