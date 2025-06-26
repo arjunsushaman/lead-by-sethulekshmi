@@ -82,7 +82,7 @@ const AppointmentSection = () => {
               <div className="space-y-2 text-muted-foreground mb-6">
                 <div className="flex justify-between">
                   <span>Monday - Sunday</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                  <span>9:00 AM - 8:00 PM</span>
                 </div>
               </div>
               <hr className="my-6 border-gray-200" />
